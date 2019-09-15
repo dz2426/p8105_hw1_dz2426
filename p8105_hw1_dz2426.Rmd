@@ -24,6 +24,12 @@ mean_log_vec = mean(pull(df_1, log_vec))
 mean_char_vec = mean(pull(df_1, char_vec))
 mean_fac_vec = mean(pull(df_1, fac_vec))
 ```
+Comments: 
+The mean of the random sample is `r round(mean_random_samp, digits = 2)`. 
+The mean of the logic vector is `r round(mean_log_vec, digits = 2)`.
+The mean of the character vector is `r round(mean_char_vec, digits = 2)`.
+The mean of the factor vector is `r round(mean_fac_vec, digits = 2)`.
+
 
 ```{r}
 
