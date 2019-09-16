@@ -15,25 +15,33 @@ library(tidyverse)
 df_1 = tibble(
   random_samp = rnorm(8),
   log_vec = random_samp > 0,
-  char_vec = c("a","b","c","d","e","f","g","h"),
-  fac_vec = factor(c("apple","orange","melon","apple","orange","orange","melon","apple"))
+  char_vec = as.character("a","b","c","d","e","f","g","h"),
+  fac_vec = factor(c("jazz","rock","blues","jazz","jazz","rock","blues","rock"))
 )
 
+#Take the mean of each variable
 mean_random_samp = mean(pull(df_1, random_samp))
 mean_log_vec = mean(pull(df_1, log_vec))
 mean_char_vec = mean(pull(df_1, char_vec))
 mean_fac_vec = mean(pull(df_1, fac_vec))
 
+#Convert the logical, character, and factor vector to numeric variable
+as.numeric(pull(df_1, log_vec))
+as.numeric(pull(df_1, char_vec))
+as.numeric(pull(df_1, fac_vec))
 
 ```
-Comments: 
+Comment 1: 
 The mean of the random sample is `r round(mean_random_samp, digits = 2)`. 
 The mean of the logic vector is `r round(mean_log_vec, digits = 2)`.
 The mean of the character vector is `r round(mean_char_vec, digits = 2)`.
 The mean of the factor vector is `r round(mean_fac_vec, digits = 2)`.
 
+Comment 2:
+After executing as.numeric function, the logical vector shows a series of "1" and "0", indicating if the statement is true. The character vector still shows "NA" for each data entry and this explains why it does not show a mean value. The factor vector turns out to be a series of number indicating each data entry's corresponding "level". 
+This shows that only the numeric and logical vectors can show their mean values, and explains why the character and factor variables did not show their means.
+
 ## Section 2
-Here is a code chunk for converting non-numeric variables to numeric variables.
 ```{r}
 
 ```
