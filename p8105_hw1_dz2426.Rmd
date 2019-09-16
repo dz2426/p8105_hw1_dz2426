@@ -67,5 +67,16 @@ df_2 = tibble(
   num_vec_2 = as.numeric(log_vec_2),
   fac_vec_2 = as.factor(log_vec_2)
 )
-```
 
+#mean, median and standard deviation of x
+mean_x = mean(pull(df_2, x))
+median_x = median(pull(df_2, x))
+sd_x = sd(pull(df_2, x))
+
+#Proportion of cases for which x+y>1
+
+
+```
+Description of data frame:
+The size of the data set is `r nrow(df_2)` and `r ncol(df_2)`.
+The mean, median and standard deviation of x is `r round(mean_x, digits = 2)`, `r round(median_x, digits = 2)` and `r round(sd_x, digits = 2)`, respectively.
