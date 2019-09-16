@@ -9,7 +9,7 @@ output: github_document
 
 ## Section 1
 The chunk below creates a data frame containing a random sample of size 8 from a standard normal distribution, a logical vector indicating whether the element of the sample is greater than 0, a character vector of length 8, and a factor vector of length 8 with 3 different factor levels, and also produces the mean of each variable.
-```{r}
+```{r warning = FALSE, eval = FALSE}
 library(tidyverse)
 
 df_1 = tibble(
@@ -39,10 +39,14 @@ The mean of the factor vector is `r round(mean_fac_vec, digits = 2)`.
 
 Comment 2:
 After executing as.numeric function, the logical vector shows a series of "1" and "0", indicating if the statement is true. The character vector still shows "NA" for each data entry and this explains why it does not show a mean value. The factor vector turns out to be a series of number indicating each data entry's corresponding "level". 
-This shows that only the numeric and logical vectors can show their mean values, and explains why the character and factor variables did not show their means.
+In general, this shows that only the numeric and logical vectors can show their mean values, and explains why the character and factor variables did not show their means.
 
 ## Section 2
+Here is the second code chunk:
 ```{r}
 
+as.numeric(pull(df_1, log_vec)) * pull(df_1, random_samp)
+as.factor(pull(df_1, log_vec)) * pull(df_1, random_samp)
+as.numeric(as.factor(pull(df_1, log_vec))) * pull(df_1, random_samp)
 ```
 
