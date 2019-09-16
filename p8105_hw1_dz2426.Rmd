@@ -81,3 +81,35 @@ Description of data frame: <br />
 The size of the data set is `r nrow(df_2)` and `r ncol(df_2)`. <br />
 The mean, median and standard deviation of x are `r round(mean_x, digits = 2)`, `r round(median_x, digits = 2)` and `r round(sd_x, digits = 2)`, respectively. <br />
 The proportion of cases for which x+y>1 is `r round(prop_case, digits = 2)`.
+
+##Section 2
+```{r yx_Logical_scatterplot}
+with(df_2, plot(x, y, xlab = "x", ylab = "y", 
+                         main = "Logical Variable Scatterplot", type = "n"))
+with(subset(df_2, log_vec_2 == 'FALSE'), points(x, y, col = 'red'))        
+with(subset(df_2, log_vec_2 == 'TRUE'), points(x, y, col = 'blue'))
+legend("bottomright", pch = 1, col = c("blue","red"), 
+       legend = c("FALSE","TRUE"))
+```
+```{r yx_numeric_scatterplot}
+
+with(df_2, plot(x, y, xlab = "x", ylab = "y", 
+                         main = "Numeric Variable Scatterplot", type = "n"))
+with(subset(df_2, num_vec_2 == '0'), points(x, y, col = 'red'))        
+with(subset(df_2, num_vec_2 == '1'), points(x, y, col = 'blue'))
+legend("bottomright", pch = 1, col = c("blue","red"), 
+       legend = c("0 = FALSE","1 = TRUE"))
+```
+```{r yx_factor_scatterplot}
+with(df_2, plot(x, y, xlab = "x", ylab = "y", 
+                         main = "Factor Variable Scatterplot", type = "n"))
+with(subset(df_2, fac_vec_2 == 'FALSE'), points(x, y, col = 'red'))        
+with(subset(df_2, fac_vec_2 == 'TRUE'), points(x, y, col = 'blue'))
+legend("bottomright", pch = 1, col = c("blue","red"), 
+       legend = c("0 = FALSE","1 = TRUE"))
+```
+
+
+
+
+
