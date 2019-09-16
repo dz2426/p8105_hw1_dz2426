@@ -6,23 +6,25 @@ output: github_document
 ---
 
 # Problem 1
-Here is a code chunk for the assigned data frame.
 
 ## Section 1
+The chunk below creates a data frame containing a random sample of size 8 from a standard normal distribution, a logical vector indicating whether the element of the sample is greater than 0, a character vector of length 8, and a factor vector of length 8 with 3 different factor levels, and also produces the mean of each variable.
 ```{r}
 library(tidyverse)
 
 df_1 = tibble(
   random_samp = rnorm(8),
   log_vec = random_samp > 0,
-  char_vec = length(8),
-  fac_vec = factor(c(1:8),levels = 3)
+  char_vec = c("a","b","c","d","e","f","g","h"),
+  fac_vec = factor(c("apple","orange","melon","apple","orange","orange","melon","apple"))
 )
 
 mean_random_samp = mean(pull(df_1, random_samp))
 mean_log_vec = mean(pull(df_1, log_vec))
 mean_char_vec = mean(pull(df_1, char_vec))
 mean_fac_vec = mean(pull(df_1, fac_vec))
+
+
 ```
 Comments: 
 The mean of the random sample is `r round(mean_random_samp, digits = 2)`. 
@@ -30,9 +32,9 @@ The mean of the logic vector is `r round(mean_log_vec, digits = 2)`.
 The mean of the character vector is `r round(mean_char_vec, digits = 2)`.
 The mean of the factor vector is `r round(mean_fac_vec, digits = 2)`.
 
-
+## Section 2
+Here is a code chunk for converting non-numeric variables to numeric variables.
 ```{r}
-
 
 ```
 
