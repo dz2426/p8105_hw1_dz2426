@@ -42,7 +42,6 @@ as.numeric(pull(df_1, log_vec))
 as.numeric(pull(df_1, char_vec))
 as.numeric(pull(df_1, fac_vec))
 ```
-
 Comment 2: <br />
 After executing as.numeric function, the logical vector shows a series of "1" and "0", indicating if the statement is true. The character vector still shows "NA" for each data entry and this explains why it does not show a mean value. The factor vector turns out to be a series of number indicating each data entry's corresponding "level". 
 In general, this shows that the numeric and logical vectors can show their mean values, while the character and factor variables can not.
