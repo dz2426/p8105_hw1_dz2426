@@ -90,7 +90,10 @@ ggplot(df_2, aes(x = x, y = y, color = log_vec_2)) +
   ylab("y") +
   labs(title = "Logical Variable Scatterplot") +
   theme(legend.position = "right", legend.title = element_blank(),
-        plot.title = element_text(color = "black", size = 12, face = "bold"))
+        plot.title = element_text(color = "black", 
+                                  size = 12, 
+                                  face = "bold", 
+                                  hjust = 0.5))
 
 ggsave("plot_one.png", width = 3, height = 3, scale = 0.75)
 ```
@@ -102,7 +105,10 @@ ggplot(df_2, aes(x = x, y = y, color = num_vec_2)) +
   ylab("y") +
   labs(title = "Numeric Variable Scatterplot") +
   theme(legend.position = "right", legend.title = element_blank(), 
-        plot.title = element_text(color = "black", size = 12, face = "bold"))
+        plot.title = element_text(color = "black", 
+                                  size = 12, 
+                                  face = "bold", 
+                                  hjust = 0.5))
 ```
 ```{r yx_factor_scatterplot}
 ggplot(df_2, aes(x = x, y = y, color = fac_vec_2)) +
@@ -111,7 +117,10 @@ ggplot(df_2, aes(x = x, y = y, color = fac_vec_2)) +
   ylab("y") +
   labs(title = "Factor Variable Scatterplot") +
   theme(legend.position = "right", legend.title = element_blank(),
-        plot.title = element_text(color = "black", size = 12, face = "bold"))
+        plot.title = element_text(color = "black", 
+                                  size = 12, 
+                                  face = "bold", 
+                                  hjust = 0.5))
 ```
 Comment 3: <br />
 In line with the value of the proportion of cases for which x+y>1, these three scatterplots clearly show that there is a much higher chance to obtain x+y<1 (red or darker blue dots). On each plot, it also shows that with higher x and y values (green or lighter blue dots), it is more likely to get a 'TRUE' result (x+y>1).
