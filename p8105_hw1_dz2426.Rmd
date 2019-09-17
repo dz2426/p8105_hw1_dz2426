@@ -95,7 +95,7 @@ ggplot(df_2, aes(x = x, y = y, color = log_vec_2)) +
                                   face = "bold", 
                                   hjust = 0.5))
 
-ggsave("plot_one.png", width = 3, height = 3, scale = 0.75)
+ggsave("plot_one.png", width = 3, height = 3)
 ```
 ```{r yx_numeric_scatterplot }
 
