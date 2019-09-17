@@ -90,6 +90,8 @@ with(subset(df_2, log_vec_2 == 'FALSE'), points(x, y, col = 'red'))
 with(subset(df_2, log_vec_2 == 'TRUE'), points(x, y, col = 'blue'))
 legend("bottomright", pch = 1, col = c("red","blue"), 
        legend = c("FALSE","TRUE"))
+
+ggsave("plot_one.png")
 ```
 ```{r yx_numeric_scatterplot }
 
@@ -111,9 +113,6 @@ legend("bottomright", pch = 1, col = c("red","blue"),
 Comment 3: <br />
 In line with the value of the proportion of cases for which x+y>1, these three scatterplots clearly show that there is a much higher chance to obtain x+y<1 (red dots). On each plot, it also shows that with higher x and y values (blue dots), it is more likely to get a 'TRUE' result (x+y>1).
 
-```{r save_plot}
-ggsave("plot_one.pdf",plot_one)
-```
 
 
 
