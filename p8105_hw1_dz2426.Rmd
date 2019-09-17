@@ -84,31 +84,34 @@ The proportion of cases for which x+y>1 is `r round(prop_case, digits = 2)`.
 ## Section 2
 Below are three code chunks for the three yx scatterplots including logical, numerical and factor variables, respectively.
 ```{r yx_Logical_scatterplot}
-plot_one = with(df_2, plot(x, y, xlab = "x", ylab = "y", 
-                           main = "Logical Variable Scatterplot", type = "n"))
-with(subset(df_2, log_vec_2 == 'FALSE'), points(x, y, col = 'red'))        
-with(subset(df_2, log_vec_2 == 'TRUE'), points(x, y, col = 'blue'))
-legend("bottomright", pch = 1, col = c("red","blue"), 
-       legend = c("FALSE","TRUE"))
+ggplot(df_2, aes(x = x, y = y, color = log_vec_2)) +
+  geom_point() +
+  xlab("x") +
+  ylab("y") +
+  labs(title = "Logical Variable Scatterplot") +
+  theme(legend.position = "right", legend.title = element_blank(),
+        plot.title = element_text(color = "black", size = 12, face = "bold"))
 
 ggsave("plot_one.png")
 ```
 ```{r yx_numeric_scatterplot }
 
-plot_two = with(df_2, plot(x, y, xlab = "x", ylab = "y", 
-                           main = "Numeric Variable Scatterplot", type = "n"))
-with(subset(df_2, num_vec_2 == '0'), points(x, y, col = 'red'))        
-with(subset(df_2, num_vec_2 == '1'), points(x, y, col = 'blue'))
-legend("bottomright", pch = 1, col = c("red","blue"), 
-       legend = c("0 = FALSE","1 = TRUE"))
+ggplot(df_2, aes(x = x, y = y, color = num_vec_2)) +
+  geom_point() +
+  xlab("x") +
+  ylab("y") +
+  labs(title = "Numeric Variable Scatterplot") +
+  theme(legend.position = "right", legend.title = element_blank(), 
+        plot.title = element_text(color = "black", size = 12, face = "bold"))
 ```
 ```{r yx_factor_scatterplot}
-plot_three = with(df_2, plot(x, y, xlab = "x", ylab = "y", 
-                             main = "Factor Variable Scatterplot", type = "n"))
-with(subset(df_2, fac_vec_2 == 'FALSE'), points(x, y, col = 'red'))        
-with(subset(df_2, fac_vec_2 == 'TRUE'), points(x, y, col = 'blue'))
-legend("bottomright", pch = 1, col = c("red","blue"), 
-       legend = c("level 1 = FALSE","level 2 = TRUE"))
+ggplot(df_2, aes(x = x, y = y, color = fac_vec_2)) +
+  geom_point() +
+  xlab("x") +
+  ylab("y") +
+  labs(title = "Factor Variable Scatterplot") +
+  theme(legend.position = "right", legend.title = element_blank(),
+        plot.title = element_text(color = "black", size = 12, face = "bold"))
 ```
 Comment 3: <br />
 In line with the value of the proportion of cases for which x+y>1, these three scatterplots clearly show that there is a much higher chance to obtain x+y<1 (red dots). On each plot, it also shows that with higher x and y values (blue dots), it is more likely to get a 'TRUE' result (x+y>1).
